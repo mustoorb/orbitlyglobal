@@ -1,0 +1,17 @@
+# orbitly — Netlify config
+# The site is plain static files. The "build" only copies them into dist/ so that
+# repo-only files (package.json, docs/, src/) are not published.
+# This overrides the Astro build script in package.json, which belongs to the
+# separate Amoura scaffold.
+
+[build]
+  command = "rm -rf dist && mkdir -p dist && cp -r index.html assets dist/"
+  publish = "dist"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "DENY"
+

@@ -19,7 +19,10 @@ Run it locally:
 npx serve .      # or: python3 -m http.server
 ```
 
-Any static host works (GitHub Pages, Netlify, Vercel, Cloudflare Pages).
+Any static host works. For **Netlify**, `netlify.toml` is already set up: it copies `index.html` and
+`assets/` into `dist/` and publishes only that, so repo files like `docs/` and `package.json` stay private.
+Connect the repo in Netlify (Add new site → Import an existing project), pick the branch and keep the
+defaults. The settings are read from `netlify.toml`.
 
 ## Design direction
 
