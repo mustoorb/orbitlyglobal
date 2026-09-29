@@ -40,6 +40,7 @@
   <symbol id="i-cpu" viewBox="0 0 24 24"><rect x="6.5" y="6.5" width="11" height="11" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M9.5 3.5v3M14.5 3.5v3M9.5 17.5v3M14.5 17.5v3M3.5 9.5h3M3.5 14.5h3M17.5 9.5h3M17.5 14.5h3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
   <symbol id="i-print" viewBox="0 0 24 24"><path d="M7 9V4h10v5M7 17H5a1.5 1.5 0 0 1-1.5-1.5v-5A1.5 1.5 0 0 1 5 9h14a1.5 1.5 0 0 1 1.5 1.5v5A1.5 1.5 0 0 1 19 17h-2M7 14h10v6H7z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
   <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3.5 12h17M12 3.5c2.4 2.4 3.5 5.2 3.5 8.5s-1.1 6.1-3.5 8.5c-2.4-2.4-3.5-5.2-3.5-8.5S9.6 5.9 12 3.5z" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+  <symbol id="i-arm" viewBox="0 0 24 24"><path d="M4 20.5h9M8.5 20.5v-3.5M8.5 15.5 12.5 8.5M13.8 8.2l4.7 1.8M18.5 10l2-2.2M18.5 10l2 2.2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="8.5" cy="15.8" r="1.7" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12.8" cy="7.6" r="1.7" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
   <symbol id="i-db" viewBox="0 0 24 24"><ellipse cx="12" cy="6.5" rx="7" ry="2.8" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M5 6.5v11c0 1.5 3.1 2.8 7 2.8s7-1.3 7-2.8v-11M5 12c0 1.5 3.1 2.8 7 2.8s7-1.3 7-2.8" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
 </svg>
 
@@ -64,6 +65,7 @@
   <nav class="top__links glass" aria-label="Primary">
     <a href="#work">Work</a>
     <a href="#services">Services</a>
+    <a href="#robotics">Robotics <i class="soon-dot" aria-hidden="true"></i></a>
     <a href="#process">Process</a>
     <a href="#calculator">Calculator</a>
     <a href="#faq">FAQ</a>
@@ -188,7 +190,7 @@
 <!-- ===================== TICKER ===================== -->
 <div class="ticker" aria-label="What we automate">
   <div class="ticker__track" data-ticker>
-    <span>WhatsApp orders → invoices</span><span>Barcode scan → stock level</span><span>Excel → live dashboard</span><span>Booking → reminder</span><span>Sensor → alert</span><span>Order → shipping label</span><span>Five tools → one system</span><span>Month-end → one click</span>
+    <span>WhatsApp orders → invoices</span><span>Barcode scan → stock level</span><span>Excel → live dashboard</span><span>Booking → reminder</span><span>Sensor → alert</span><span>Order → shipping label</span><span>Five tools → one system</span><span>Month-end → one click</span><span>orbitly robotics → coming soon</span>
   </div>
 </div>
 
@@ -271,6 +273,7 @@
         <span class="round-ico round-ico--accent"><svg><use href="#i-bolt"/></svg></span>
         <span class="pill pill--accent">Lead service</span>
       </div>
+      <p class="svc__seg">01 · orbitly automation</p>
       <h3>Business automation</h3>
       <p>We map where your hours go, then remove the repetitive parts: orders, invoices, stock, reminders, reports. Software on its own, or wired into the scanners, printers and sensors you already use.</p>
       <ul class="svc__tags"><li>Workflows</li><li>Integrations</li><li>Hardware-linked</li><li>Alerts &amp; reports</li></ul>
@@ -278,6 +281,7 @@
     </article>
     <article class="svc glass" data-reveal>
       <div class="svc__top"><span class="round-ico"><svg><use href="#i-db"/></svg></span></div>
+      <p class="svc__seg">02 · orbitly saas</p>
       <h3>Custom systems &amp; SaaS</h3>
       <p>When off-the-shelf doesn't fit: databases, dashboards and internal tools, running in the cloud or on your own machines.</p>
       <ul class="svc__tags"><li>Databases</li><li>Dashboards</li><li>On / off cloud</li></ul>
@@ -285,10 +289,22 @@
     </article>
     <article class="svc glass" data-reveal>
       <div class="svc__top"><span class="round-ico"><svg><use href="#i-globe"/></svg></span></div>
+      <p class="svc__seg">03 · orbitly web</p>
       <h3>Websites</h3>
       <p>Brand sites, portfolios and stores that look sharp and plug straight into the systems behind them.</p>
       <ul class="svc__tags"><li>Brand</li><li>Portfolio</li><li>E-commerce</li></ul>
       <button class="btn btn--glass btn--sm magnetic" data-interest="Website"><span>Get a website</span><span class="btn__ico"><svg><use href="#i-arrow"/></svg></span></button>
+    </article>
+    <article class="svc glass svc--soon" data-reveal>
+      <div class="svc__top">
+        <span class="round-ico"><svg><use href="#i-arm"/></svg></span>
+        <span class="pill pill--soon"><span class="live"></span> Coming soon</span>
+      </div>
+      <p class="svc__seg">04 · orbitly robotics</p>
+      <h3>Robotics</h3>
+      <p>Mechatronics and robotic systems: automation that leaves the screen and moves real things.</p>
+      <ul class="svc__tags"><li>Mechatronics</li><li>Robotics</li><li>Hardware</li></ul>
+      <a class="btn btn--glass btn--sm magnetic" href="#robotics"><span>See what's coming</span><span class="btn__ico"><svg><use href="#i-arrow"/></svg></span></a>
     </article>
   </div>
 
@@ -309,13 +325,78 @@
   </div>
 </section>
 
+<!-- ===================== ROBOTICS (coming soon) ===================== -->
+<section class="robo" id="robotics">
+  <div class="robo__bg" aria-hidden="true"></div>
+  <div class="robo__glow" aria-hidden="true"></div>
+  <div class="wrap robo__grid">
+    <div class="robo__copy on-dark">
+      <p class="eyebrow eyebrow--light"><span class="num dots">03</span> orbitly robotics</p>
+      <p class="pill pill--soon pill--dark" data-reveal><span class="live"></span> Coming soon · in development</p>
+      <h2 class="h2 h2--light" data-split>Automation that moves. <span class="accent-text">Coming soon.</span></h2>
+      <p class="robo__lede" data-reveal>orbitly robotics is our new mechatronics segment: machines and robotic systems that take automation off the screen and onto the workbench. The first build is on the bench now.</p>
+
+      <div class="robo__card glass-dark" data-reveal data-robotics>
+        <!-- filled by main.js from ORBITLY_ROBOTICS in projects.js -->
+      </div>
+
+      <div class="robo__cta" data-reveal>
+        <button class="btn btn--accent magnetic" type="button" data-interest="Robotics" data-source="robotics-waitlist"><span>Get notified at launch</span><span class="btn__ico"><svg><use href="#i-bell"/></svg></span></button>
+        <p class="robo__fine">One message when it launches. No spam.</p>
+      </div>
+    </div>
+
+    <div class="robo__stage" aria-hidden="true">
+      <span class="robo__ring"></span><span class="robo__ring robo__ring--2"></span>
+      <svg class="robo__arm" viewBox="0 0 600 540">
+        <defs>
+          <linearGradient id="metal" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8E9096"/><stop offset=".18" stop-color="#3A3C41"/><stop offset=".55" stop-color="#1B1C20"/><stop offset=".85" stop-color="#2E3035"/><stop offset="1" stop-color="#6B6D72"/></linearGradient>
+          <linearGradient id="metal2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5A5C62"/><stop offset=".4" stop-color="#26282D"/><stop offset="1" stop-color="#141519"/></linearGradient>
+          <radialGradient id="joint" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#6F7CFF"/><stop offset=".55" stop-color="#3346FF"/><stop offset="1" stop-color="#2433D6"/></radialGradient>
+        </defs>
+        <!-- blueprint dimension lines -->
+        <g class="robo__dims" fill="none" stroke="rgba(255,255,255,.22)" stroke-dasharray="3 5">
+          <path d="M300 372 V 150"/><path d="M300 212 H 540"/><path d="M120 470 H 480"/>
+        </g>
+        <g class="robo__labels" font-family="Urbanist, sans-serif" font-size="13" fill="rgba(255,255,255,.55)">
+          <text x="316" y="160">J2 · elbow</text><text x="200" y="360">J1 · shoulder</text><text x="480" y="246">J3 · wrist</text>
+        </g>
+        <!-- base -->
+        <rect x="170" y="452" width="260" height="30" rx="15" fill="url(#metal2)" stroke="rgba(255,255,255,.14)"/>
+        <rect x="248" y="388" width="104" height="72" rx="20" fill="url(#metal)" stroke="rgba(255,255,255,.14)"/>
+        <!-- arm -->
+        <g id="arm-upper">
+          <rect x="274" y="196" width="52" height="190" rx="26" fill="url(#metal)" stroke="rgba(255,255,255,.16)"/>
+          <rect x="292" y="232" width="16" height="118" rx="8" fill="rgba(0,0,0,.35)"/>
+          <g id="arm-fore">
+            <rect x="290" y="188" width="196" height="46" rx="23" fill="url(#metal)" stroke="rgba(255,255,255,.16)"/>
+            <rect x="330" y="205" width="120" height="12" rx="6" fill="rgba(0,0,0,.35)"/>
+            <g id="arm-wrist">
+              <rect x="470" y="192" width="34" height="38" rx="10" fill="url(#metal2)" stroke="rgba(255,255,255,.16)"/>
+              <rect id="finger-a" x="500" y="186" width="46" height="12" rx="6" fill="url(#metal)" stroke="rgba(255,255,255,.2)"/>
+              <rect id="finger-b" x="500" y="224" width="46" height="12" rx="6" fill="url(#metal)" stroke="rgba(255,255,255,.2)"/>
+              <circle class="robo__joint" cx="486" cy="211" r="11" fill="url(#joint)"/>
+            </g>
+            <circle class="robo__joint" cx="300" cy="211" r="17" fill="url(#joint)"/>
+            <circle cx="300" cy="211" r="6" fill="#fff"/>
+          </g>
+          <circle class="robo__joint" cx="300" cy="372" r="20" fill="url(#joint)"/>
+          <circle cx="300" cy="372" r="7" fill="#fff"/>
+        </g>
+        <circle class="robo__led" cx="200" cy="467" r="4" fill="#6F7CFF"/>
+      </svg>
+      <div class="float glass float--robo" data-float="-40"><span class="float__ico float__ico--accent"><svg><use href="#i-arm"/></svg></span><span><b>Build status</b><small>On the bench</small></span></div>
+    </div>
+  </div>
+</section>
+
 <!-- ===================== PROCESS (pinned phone story) ===================== -->
 <section class="story" id="process">
   <div class="story__pin">
     <div class="story__bg" aria-hidden="true"></div>
     <div class="wrap story__grid">
       <div class="story__steps">
-        <p class="eyebrow eyebrow--light"><span class="num dots">03</span> How it works</p>
+        <p class="eyebrow eyebrow--light"><span class="num dots">04</span> How it works</p>
         <h2 class="h2 h2--light">Leading the way, <span class="accent-text">bit by bit.</span></h2>
         <ol class="story__list">
           <li class="is-active"><span class="dots">01</span><div><b>Free audit</b><p>We sit with how your business actually runs and find where the hours go. If automation isn't worth it, we'll say so.</p></div></li>
@@ -391,7 +472,7 @@
 <!-- ===================== CALCULATOR ===================== -->
 <section class="calc wrap" id="calculator">
   <div class="calc__copy">
-    <p class="eyebrow"><span class="num dots">04</span> Hours calculator</p>
+    <p class="eyebrow"><span class="num dots">05</span> Hours calculator</p>
     <h2 class="h2" data-split>What is busywork costing you?</h2>
     <p class="lede">Pick one repetitive task and plug in your own numbers. It's a rough estimate; the free audit gives you the real one.</p>
   </div>
@@ -425,7 +506,7 @@
 
 <!-- ===================== WHY ===================== -->
 <section class="why wrap">
-  <p class="eyebrow"><span class="num dots">05</span> Why orbitly</p>
+  <p class="eyebrow"><span class="num dots">06</span> Why orbitly</p>
   <h2 class="h2" data-split>Measured in hours handed back.</h2>
   <div class="why__grid">
     <div class="why__item glass" data-reveal><span class="round-ico"><svg><use href="#i-cpu"/></svg></span><b>Software + hardware</b><p>Code that reaches the counter, the warehouse and the machine.</p></div>
@@ -439,7 +520,7 @@
 <!-- ===================== FAQ ===================== -->
 <section class="faq wrap" id="faq">
   <div class="faq__head">
-    <p class="eyebrow"><span class="num dots">06</span> Questions</p>
+    <p class="eyebrow"><span class="num dots">07</span> Questions</p>
     <h2 class="h2" data-split>Before you ask.</h2>
     <a class="btn btn--glass magnetic" href="#contact" data-cta="faq"><span>Ask us directly</span><span class="btn__ico"><svg><use href="#i-arrow"/></svg></span></a>
   </div>
@@ -459,6 +540,10 @@
     <details class="faq__item glass">
       <summary>Can you connect to our scanners, printers or machines?<span class="faq__ico"><svg><use href="#i-plus"/></svg></span></summary>
       <p>Yes. Hardware-linked automation is the rarest thing we do: barcode scanners, label printers, sensors, scales and other devices connected to the same system as your orders and stock.</p>
+    </details>
+    <details class="faq__item glass">
+      <summary>What is orbitly robotics?<span class="faq__ico"><svg><use href="#i-plus"/></svg></span></summary>
+      <p>Our fourth segment, coming soon: mechatronics and robotic systems that take automation from software into physical movement. The first build is in development. Choose "Robotics" in the form below and we'll tell you when it launches.</p>
     </details>
     <details class="faq__item glass">
       <summary>Cloud or on our own machines?<span class="faq__ico"><svg><use href="#i-plus"/></svg></span></summary>
@@ -504,6 +589,7 @@
           <label><input type="radio" name="interest" value="Custom system"><span><svg><use href="#i-db"/></svg> Custom system</span></label>
           <label><input type="radio" name="interest" value="Website"><span><svg><use href="#i-globe"/></svg> Website</span></label>
           <label><input type="radio" name="interest" value="Not sure yet"><span><svg><use href="#i-spark"/></svg> Not sure yet</span></label>
+          <label class="choice--soon"><input type="radio" name="interest" value="Robotics"><span><svg><use href="#i-arm"/></svg> Robotics <em>· notify me at launch</em></span></label>
         </div>
       </div>
 

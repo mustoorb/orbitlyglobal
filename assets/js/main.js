@@ -50,7 +50,7 @@
       ['Personal', personal.length, '#work-personal', '']
     ].filter(function (c) { return c[1] > 0; }).map(function (c) {
       return '<a class="count' + c[3] + '" href="' + c[2] + '"><span class="dots" data-count-to="' + c[1] + '">' + pad(c[1]) + '</span>' + c[0] + '</a>';
-    }).join('');
+    }).join('') + '<a class="count count--soon" href="#robotics"><span class="dots">\u2022</span>Robotics \u00b7 soon</a>';
   }
 
   function mockSite(v) {
@@ -135,6 +135,19 @@
     }).join('');
   }
 
+  // robotics (coming soon)
+  var ROBO = window.ORBITLY_ROBOTICS || {};
+  var roboEl = $('[data-robotics]');
+  if (roboEl) {
+    roboEl.innerHTML =
+      (ROBO.image ? '<img class="robo__img" src="' + esc(ROBO.image) + '" alt="' + esc(ROBO.name) + '" loading="lazy">' : '') +
+      '<p class="tag tag--light">First build \u00b7 ' + fillify(ROBO.status || 'In development') + '</p>' +
+      '<b>' + fillify(ROBO.name) + '</b>' +
+      '<p>' + fillify(ROBO.summary) + '</p>' +
+      '<ul class="robo__meta">' + (ROBO.tags || []).map(function (t) { return '<li>' + fillify(t) + '</li>'; }).join('') +
+      (ROBO.launch ? '<li class="is-accent">Expected ' + fillify(ROBO.launch) + '</li>' : '') + '</ul>';
+  }
+
   // ---------------------------------------------------------------- contact details
   var contactHref = {
     email: CONTACT.email ? 'mailto:' + CONTACT.email : '',
@@ -187,6 +200,7 @@
     if (interest) {
       var radio = $('input[name="interest"][value="' + interest + '"]', form);
       if (radio) radio.checked = true;
+      var sl = $('[data-submit-label]', form); if (sl) sl.textContent = submitLabelFor(interest);
     }
     if (source) form.elements.source.value = source;
     if (calcSummary) form.elements.calculator.value = calcSummary;
@@ -216,10 +230,15 @@
     goTo(t, id === '#top' ? 0 : -12);
   });
 
+  var submitLabelFor = function (v) { return v === 'Robotics' ? 'Notify me at launch' : 'Book my free audit'; };
+  if (form) {
+    form.addEventListener('change', function (e) {
+      if (e.target.name === 'interest') { var l = $('[data-submit-label]', form); if (l) l.textContent = submitLabelFor(e.target.value); }
+    });
+  }
   if (form) {
     var done = $('.form__done', form);
     var label = $('[data-submit-label]', form);
-    var labelText = label ? label.textContent : '';
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       if (!form.reportValidity()) return;
@@ -234,7 +253,7 @@
         })
         .catch(function () {
           if (label) label.textContent = "Couldn't send, please try again";
-          setTimeout(function () { if (label) label.textContent = labelText; }, 4000);
+          setTimeout(function () { if (label) label.textContent = submitLabelFor(form.elements.interest.value); }, 4000);
         })
         .then(function () { form.classList.remove('is-sending'); });
     });
@@ -440,7 +459,7 @@
   // ---------------------------------------------------------------- loader → hero
   var loader = $('.loader');
   var heroPhone = $('[data-hero-phone]');
-  var floats = $$('.float');
+  var floats = $$('.hero .float');
   gsap.set(heroPhone, { rotationZ: -9, rotationY: -14, rotationX: 6 });
   gsap.set(floats, { z: 140 });
   gsap.set(heroWords, { yPercent: 115, rotate: 6 });
@@ -494,7 +513,7 @@
     start: 0, end: 'max',
     onUpdate: function (s) { top.classList.toggle('is-hidden', s.direction === 1 && s.scroll() > 400); }
   });
-  ['work', 'services', 'process', 'calculator', 'faq', 'contact'].forEach(function (id) {
+  ['work', 'services', 'robotics', 'process', 'calculator', 'faq', 'contact'].forEach(function (id) {
     var sec = document.getElementById(id);
     if (!sec) return;
     ScrollTrigger.create({
@@ -626,6 +645,23 @@
     ScrollTrigger.batch('.fun', { start: 'top 90%', once: true, onEnter: function (els) {
       gsap.from(els, { y: 80, opacity: 0, rotationX: -14, duration: 1.1, ease: 'expo.out', stagger: .1 });
     } });
+  }
+
+  // ---------------------------------------------------------------- robotics: arm moves with scroll
+  if ($('#arm-upper')) {
+    gsap.set('#arm-upper', { svgOrigin: '300 372' });
+    gsap.set('#arm-fore', { svgOrigin: '300 211' });
+    gsap.set('#arm-wrist', { svgOrigin: '486 211' });
+    mm.add('(prefers-reduced-motion: no-preference)', function () {
+      var tl = gsap.timeline({ scrollTrigger: { trigger: '.robo', start: 'top 85%', end: 'bottom 15%', scrub: 1.2 } });
+      tl.fromTo('#arm-upper', { rotation: -30 }, { rotation: 12, ease: 'sine.inOut' }, 0)
+        .fromTo('#arm-fore', { rotation: 42 }, { rotation: -22, ease: 'sine.inOut' }, 0)
+        .fromTo('#arm-wrist', { rotation: -35 }, { rotation: 28, ease: 'sine.inOut' }, 0)
+        .fromTo('#finger-a', { y: -10 }, { y: 2, ease: 'power2.inOut' }, 0.3)
+        .fromTo('#finger-b', { y: 10 }, { y: -2, ease: 'power2.inOut' }, 0.3);
+      gsap.fromTo('.robo__glow', { yPercent: -60 }, { yPercent: -40, ease: 'none', scrollTrigger: { trigger: '.robo', start: 'top bottom', end: 'bottom top', scrub: true } });
+      gsap.fromTo('.float--robo', { y: 40 }, { y: -40, ease: 'none', scrollTrigger: { trigger: '.robo', start: 'top bottom', end: 'bottom top', scrub: true } });
+    });
   }
 
   // ---------------------------------------------------------------- story: pinned phone

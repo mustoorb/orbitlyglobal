@@ -36,6 +36,13 @@ an optional live `url` and an optional `image`.
 - `ORBITLY_CONTACT` at the bottom of the file sets the email, WhatsApp number, booking link and
   calculator currency. Once they're filled in, the contact pills link to them.
 
+## orbitly robotics (coming soon)
+
+The fourth segment appears as a service card and as its own section (`#robotics`) with an animated
+robotic arm that moves as you scroll. Its details come from `ORBITLY_ROBOTICS` in
+`assets/js/projects.js`. Visitors can pick "Robotics" in the form to be notified at launch; those
+submissions arrive in Netlify Forms with `interest = Robotics`.
+
 ## Contact form (Netlify Forms)
 
 The audit form posts to Netlify Forms, with a honeypot field for spam. To receive submissions:
@@ -84,6 +91,7 @@ Everything marked **`[FILL: …]`** shows on the page as a striped yellow tag. N
 | `projects.js` → personal | Names, summaries, images (3 slots) |
 | `index.html` → OS heading | Your other brand's name (`data-os-brand`) |
 | `projects.js` → contact | Email, WhatsApp number, booking link, calculator currency |
+| `projects.js` → `ORBITLY_ROBOTICS` | Robotics project name, one-line summary, optional launch window and photo |
 
 The hero phone is labelled "Demo UI" and the process phone shows example screens. Their numbers
 are illustrations, not claims about real clients.
