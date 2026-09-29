@@ -165,6 +165,17 @@ window.ORBITLY_PROJECTS = [
   }
 ];
 
+/* orbitly robotics: the coming-soon project shown in the Robotics section.
+   Leave `launch` empty until you have a date you're happy to publish. */
+window.ORBITLY_ROBOTICS = {
+  name: '[FILL: robotics project name]',
+  summary: '[FILL: one or two lines on what it does and who it is for]',
+  status: 'In development',
+  launch: '',          // e.g. 'Early 2027'
+  tags: ['Mechatronics', 'Robotics', 'Built in-house'],
+  image: ''            // optional photo of the build, e.g. 'assets/work/robot.jpg'
+};
+
 /* Contact details used across the site. */
 window.ORBITLY_CONTACT = {
   email: '',        // e.g. 'hello@orbitly.co'
